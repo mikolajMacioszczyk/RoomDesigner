@@ -4,7 +4,7 @@
 
 @model RoomDesigner.Models.RoomDesignerViewModel
 
-<div class="container">
+<div class="selector-container">
     <img id="roomImage" src="https://localhost:44381/api/room/blue/large/books/black" alt="room image" />
 
     <select class="wall-select" id="wallColor" asp-items="Model.AvailableWallColors" onchange="changePhoto()"></select>
