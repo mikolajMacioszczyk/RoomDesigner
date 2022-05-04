@@ -1,5 +1,35 @@
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.wall-select {
+    position: absolute;
+    bottom: 500px;
+    left: 1000px;
+}
+
+.tv-select {
+    position: absolute;
+    bottom: 240px;
+    left: 400px;
+}
+
+.decorations-select {
+    position: absolute;
+    bottom: 420px;
+    left: 685px;
+}
+
+.carpet-select {
+    position: absolute;
+    bottom: 85px;
+    left: 900px;
+}
+
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {

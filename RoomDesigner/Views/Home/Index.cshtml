@@ -4,26 +4,16 @@
 
 @model RoomDesigner.Models.RoomDesignerViewModel
 
-<img id="roomImage" src="https://localhost:44381/api/room/blue/large/books/black" alt="room image" />
+<div class="container">
+    <img id="roomImage" src="https://localhost:44381/api/room/blue/large/books/black" alt="room image" />
 
-<div>
-    <label for="wallColor">Wall Color</label>
-    <select id="wallColor" asp-items="Model.AvailableWallColors" onchange="changePhoto()"></select>
-</div>
+    <select class="wall-select" id="wallColor" asp-items="Model.AvailableWallColors" onchange="changePhoto()"></select>
 
-<div>
-    <label for="tvSize">TV Size</label>
-    <select id="tvSize" asp-items="Model.AvailableTvSize" onchange="changePhoto()"></select>
-</div>
+    <select class="tv-select" id="tvSize" asp-items="Model.AvailableTvSize" onchange="changePhoto()"></select>
 
-<div>
-    <label for="decorations">Decoration</label>
-    <select id="decorations" asp-items="Model.AvailableDecorations" onchange="changePhoto()"></select>
-</div>
+    <select class="decorations-select" id="decorations" asp-items="Model.AvailableDecorations" onchange="changePhoto()"></select>
 
-<div>
-    <label for="carpet">Carpet</label>
-    <select id="carpet" asp-items="Model.AvailableCarpet" onchange="changePhoto()"></select>
+    <select class="carpet-select" id="carpet" asp-items="Model.AvailableCarpet" onchange="changePhoto()"></select>
 </div>
 
 <script>
