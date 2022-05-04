@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using RoomDesigner.Enums;
 using RoomDesigner.Models;
 using System.Diagnostics;
 
@@ -15,7 +17,15 @@ namespace RoomDesigner.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var model = new RoomDesignerViewModel()
+            {
+                AvailableWallColors = Enum.GetNames(typeof(WallColor)).Select(v => new SelectListItem() { Text = v, Value = v}).ToList(),
+                AvailableTvSize = Enum.GetNames(typeof(TvSize)).Select(v => new SelectListItem() { Text = v, Value = v }).ToList(),
+                AvailableDecorations = Enum.GetNames(typeof(DecorationType)).Select(v => new SelectListItem() { Text = v, Value = v }).ToList(),
+                AvailableCarpet = Enum.GetNames(typeof(CarpetType)).Select(v => new SelectListItem() { Text = v, Value = v }).ToList(),
+            };
+
+            return View(model);
         }
 
         public IActionResult Privacy()

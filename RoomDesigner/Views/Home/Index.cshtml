@@ -2,7 +2,26 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@model RoomDesigner.Models.RoomDesignerViewModel
+
+<img src="https://localhost:44381/api/room/blue/large/teapot/black" />
+
+<div>
+    <label for="wallColor">Wall Color</label>
+    <select id="wallColor" asp-items="Model.AvailableWallColors"></select>
+</div>
+
+<div>
+    <label for="tvSize">TV Size</label>
+    <select id="tvSize" asp-items="Model.AvailableTvSize"></select>
+</div>
+
+<div>
+    <label for="decorations">Decoration</label>
+    <select id="decorations" asp-items="Model.AvailableDecorations"></select>
+</div>
+
+<div>
+    <label for="carpet">Carpet</label>
+    <select id="carpet" asp-items="Model.AvailableCarpet"></select>
 </div>
