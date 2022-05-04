@@ -7,13 +7,21 @@
 <div class="selector-container">
     <img id="roomImage" src="https://localhost:44381/api/room/blue/large/books/black" alt="room image" />
 
-    <select class="wall-select" id="wallColor" asp-items="Model.AvailableWallColors" onchange="changePhoto()"></select>
+    <div class="box wall-select">
+        <select class="" id="wallColor" asp-items="Model.AvailableWallColors" onchange="changePhoto()"></select>
+    </div>
 
-    <select class="tv-select" id="tvSize" asp-items="Model.AvailableTvSize" onchange="changePhoto()"></select>
+    <div class="box tv-select">
+        <select id="tvSize" asp-items="Model.AvailableTvSize" onchange="changePhoto()"></select>
+    </div>
 
-    <select class="decorations-select" id="decorations" asp-items="Model.AvailableDecorations" onchange="changePhoto()"></select>
+    <div class="box decorations-select">
+        <select id="decorations" asp-items="Model.AvailableDecorations" onchange="changePhoto()"></select>
+    </div>
 
-    <select class="carpet-select" id="carpet" asp-items="Model.AvailableCarpet" onchange="changePhoto()"></select>
+    <div class="box carpet-select">
+        <select id="carpet" asp-items="Model.AvailableCarpet" onchange="changePhoto()"></select>
+    </div>
 </div>
 
 <script>

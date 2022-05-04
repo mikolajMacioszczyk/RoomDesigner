@@ -6,25 +6,25 @@
 
 .wall-select {
     position: absolute;
-    bottom: 500px;
+    bottom: 480px;
     left: 1000px;
 }
 
 .tv-select {
     position: absolute;
-    bottom: 240px;
+    bottom: 150px;
     left: 400px;
 }
 
 .decorations-select {
     position: absolute;
-    bottom: 420px;
-    left: 685px;
+    bottom: 400px;
+    left: 750px;
 }
 
 .carpet-select {
     position: absolute;
-    bottom: 85px;
+    bottom: 70px;
     left: 900px;
 }
 
@@ -35,6 +35,32 @@
     color: white;
     padding: 15px;
 }
+
+/* select box */
+
+.box {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.box select {
+    background-color: #f8f9fa;
+    color: black;
+    padding: 8px;
+    width: 150px;
+    border: none;
+    font-size: 18px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+}
+
+.box select option {
+    padding: 30px;
+}
+
+/* select box */
 
 html {
     font-size: 14px;
