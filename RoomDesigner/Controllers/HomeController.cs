@@ -19,10 +19,10 @@ namespace RoomDesigner.Controllers
         {
             var model = new RoomDesignerViewModel()
             {
-                AvailableWallColors = Enum.GetNames(typeof(WallColor)).Select(v => new SelectListItem() { Text = v, Value = v}).ToList(),
-                AvailableTvSize = Enum.GetNames(typeof(TvSize)).Select(v => new SelectListItem() { Text = v, Value = v }).ToList(),
-                AvailableDecorations = Enum.GetNames(typeof(DecorationType)).Select(v => new SelectListItem() { Text = v, Value = v }).ToList(),
-                AvailableCarpet = Enum.GetNames(typeof(CarpetType)).Select(v => new SelectListItem() { Text = v, Value = v }).ToList(),
+                AvailableWallColors = Enum.GetNames(typeof(WallColor)).OrderBy(v => v).Select(v => new SelectListItem() { Text = v, Value = v}).ToList(),
+                AvailableTvSize = Enum.GetNames(typeof(TvSize)).OrderBy(v => v).Select(v => new SelectListItem() { Text = v, Value = v }).ToList(),
+                AvailableDecorations = Enum.GetNames(typeof(DecorationType)).OrderBy(v => v).Select(v => new SelectListItem() { Text = v, Value = v }).ToList(),
+                AvailableCarpet = Enum.GetNames(typeof(CarpetType)).OrderBy(v => v).Select(v => new SelectListItem() { Text = v, Value = v }).ToList(),
             };
 
             return View(model);
