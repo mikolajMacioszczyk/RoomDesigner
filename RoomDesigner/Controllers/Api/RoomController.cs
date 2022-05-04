@@ -19,13 +19,15 @@ namespace RoomDesigner.Controllers.Api
             _roomService = roomService;
         }
 
-        [HttpGet("")]
+        [HttpGet("{wallColor}/{tvSize}/{decoration}/{carpet}")]
         public ActionResult GetPotwierdzeniePhoto(string wallColor, string tvSize, string decoration, string carpet)
         {
-            var wallColorType = WallColor.Red;
-            var tvSizeType = TvSize.Large;
-            var decorationType = DecorationType.Teapot;
-            var carpetType = CarpetType.White;
+            var isValid = ParseRoomSpecs(wallColor, tvSize, decoration, carpet, out WallColor wallColorType, 
+                out TvSize tvSizeType, out DecorationType decorationType, out CarpetType carpetType);
+            if (!isValid)
+            {
+                return BadRequest($"Unsupprted room specification: {wallColor}, {tvSize}, {decoration}, {carpet}");
+            }
 
             var fileName = _roomService.GetRoomFileName(wallColorType, tvSizeType, decorationType, carpetType);
 
@@ -37,6 +39,27 @@ namespace RoomDesigner.Controllers.Api
             }
 
             return File(imageStream, "image/jpeg");
+        }
+
+        private bool ParseRoomSpecs(string wallColor, string tvSize, string decoration, string carpet,
+            out WallColor wallColorType, out TvSize tvSizeType, out DecorationType decorationType, out CarpetType carpetType)
+        {
+            try
+            {
+                wallColorType = (WallColor)Enum.Parse(typeof(WallColor), wallColor.ToLower());
+                tvSizeType = (TvSize)Enum.Parse(typeof(TvSize), tvSize.ToLower());
+                decorationType = (DecorationType)Enum.Parse(typeof(DecorationType), decoration.ToLower());
+                carpetType = (CarpetType)Enum.Parse(typeof(CarpetType), carpet.ToLower());
+                return true;
+            }
+            catch (ArgumentException)
+            {
+                wallColorType = WallColor.red;
+                tvSizeType = TvSize.medium;
+                decorationType = DecorationType.teapot;
+                carpetType = CarpetType.white;
+                return false;
+            }
         }
     }
 }

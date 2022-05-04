@@ -2,8 +2,8 @@
 {
     public enum TvSize
     {
-        Small,
-        Medium,
-        Large
+        small,
+        medium,
+        large
     }
 }

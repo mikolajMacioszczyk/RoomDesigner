@@ -2,8 +2,8 @@
 {
     public enum DecorationType
     {
-        Teapot,
-        Mug,
-        Books
+        teapot,
+        mug,
+        books
     }
 }

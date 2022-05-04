@@ -2,8 +2,8 @@
 {
     public enum WallColor
     {
-        Red,
-        Blue,
-        Violet
+        red,
+        blue,
+        violet
     }
 }

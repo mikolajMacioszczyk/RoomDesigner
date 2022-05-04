@@ -2,8 +2,8 @@
 {
     public enum CarpetType
     {
-        Black,
-        Piebald,
-        White
+        black,
+        piebald,
+        white
     }
 }
