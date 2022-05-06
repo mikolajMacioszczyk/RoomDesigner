@@ -11,7 +11,7 @@ namespace RoomDesigner.Services
             var tvSizeName = Enum.GetName(typeof(TvSize), tvSize);
             var decorationName = Enum.GetName(typeof(DecorationType), decoration);
             var carpetName = Enum.GetName(typeof(CarpetType), carpet);
-            return Path.Combine(colorName, tvSizeName, decorationName, $"{colorName}_{tvSizeName}_{decorationName}_{carpetName}.jpg");
+            return Path.Combine(colorName, tvSizeName, decorationName, $"{carpetName}.jpg");
         }
     }
 }
